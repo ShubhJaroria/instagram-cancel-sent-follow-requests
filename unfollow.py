@@ -9,7 +9,7 @@ text_file = sys.argv[1]
 text_file = open(text_file, "r") 
 lines = text_file.read().split('\n')
 
-
+print("Unfollowing " + len(lines) + "people.")
 driver = webdriver.Chrome(sys.argv[4])
 
 driver.get('https://www.instagram.com/accounts/login/')
