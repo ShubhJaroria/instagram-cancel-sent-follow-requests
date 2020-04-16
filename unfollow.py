@@ -29,3 +29,4 @@ for name in lines:
 	sleep(2)
 	driver.find_element_by_class_name("aOOlW.-Cab_").click() 
 	print("Unfollowed " + name + ".")
+	sleep(2)
