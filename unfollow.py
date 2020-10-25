@@ -4,22 +4,19 @@ from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.keys import Keys
 
-
-text_file = sys.argv[1]
-text_file = open(text_file, "r") 
-lines = text_file.read().split('\n')
-
-print("Unfollowing " + str(len(lines)) + " people.")
-driver = webdriver.Chrome(sys.argv[4])
+driver = webdriver.Chrome(sys.argv[3])
 
 driver.get('https://www.instagram.com/accounts/login/')
 sleep(10)
 id_box_name = driver.find_element_by_name('username')
-id_box_name.send_keys(sys.argv[2])
+id_box_name.send_keys(sys.argv[1])
 id_box_pass = driver.find_element_by_name('password')
-id_box_pass.send_keys(sys.argv[3])
+id_box_pass.send_keys(sys.argv[2])
 id_box_pass.send_keys(Keys.ENTER)
 sleep(5)
+driver.get("https://www.instagram.com/accounts/access_tool/current_follow_requests")
+lines = driver.find_elements_by_class_name("-utLf")
+lines = [line.text for line in lines]
 
 for name in lines:
 	driver.get('https://www.instagram.com/'+name+'/')
