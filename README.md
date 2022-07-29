@@ -1,4 +1,4 @@
-# instagram-cancel-follow-requests
+# instagram-cancel-sent-follow-requests
 A python script to cancel sent follow requests all in one go.
 Download chromedriver:
 https://chromedriver.chromium.org/downloads
